@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 hidden=[".config"]
 
 # hosting is currently hardcoded for this language
@@ -177,3 +178,26 @@ start = "vscode-css-language-server --stdio"
 
 [gitHubImport]
 requiredFiles = [".replit", "replit.nix", ".config"]
+=======
+entrypoint = "index.js"
+modules = ["nodejs-20:v8-20230920-bd784b9"]
+hidden = [".config", "package-lock.json"]
+
+[gitHubImport]
+requiredFiles = [".replit", "replit.nix", "package.json", "package-lock.json"]
+
+[nix]
+channel = "stable-23_05"
+
+[unitTest]
+language = "nodejs"
+
+[deployment]
+run = ["node", "index.js"]
+deploymentTarget = "cloudrun"
+ignorePorts = false
+
+[[ports]]
+localPort = 8000
+externalPort = 80
+>>>>>>> e83d372765cc040730f8d6abc5998fff2d11aadf
